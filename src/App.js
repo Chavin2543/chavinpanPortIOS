@@ -28,6 +28,15 @@ const App = () => {
     exited: { opacity: 0, display: "none" },
   };
 
+  const handleKeyDown = (event) => {
+    if (event.keyCode === 13) {
+      window.open(
+        "https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+      );
+      console.log("FUCK");
+    }
+  };
+
   const handleTextChange = (password) => {
     setPassword(password);
     console.log(password);
@@ -149,6 +158,7 @@ const App = () => {
                 <input
                   type="text"
                   name="password"
+                  onKeyDown={(e) => handleKeyDown(e)}
                   onChange={(e) => handleTextChange(e.target.value)}
                   className="bg-input-color rounded-xl w-218 h-28 px-2 focus:outline-none"
                 />
